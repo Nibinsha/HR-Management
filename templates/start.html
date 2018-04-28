@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>softhrm</title>
+
+        <!--{% include 'navbar.html' %}
+
+
+
+     <!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+<!-- font awesome -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- bootstrap -->
+<link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}" />
+
+<!-- animate.css -->
+<link rel="stylesheet" href="{% static 'assets/animate/animate.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/animate/set.css' %}" />
+
+
+
+<!-- favicon -->
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+
+<link rel="stylesheet" href="{% static 'assets/style.css' %}">
+
+
+
+
+ <h1 style="color:white;font-family: verdana; text-align:center;font-size: 500%;">WELCOME TO SOFT HRM</h1>
+
+ <body background="{% static 'img/header-new.png' %}">
+      
+
+           <!-- works -->
+<div id="works"  class=" clearfix grid"> 
+    <figure class="effect-oscar  wowload fadeIn">
+        <img src="{% static 'img/start/1.jpg' %}"  alt="img01"/>
+        <figcaption>
+            <h2>HR</h2>
+            <p>please login to HR area<br>
+            <a href='/administration/' title="1" data-gallery>Go...</a></p>            
+        </figcaption>
+    </figure>
+     <figure class="effect-oscar  wowload fadeInUp">
+        <img src="{% static "img/start/2.jpg" %}"  alt="img01"/>
+        <figcaption>
+            <h2>EMPLOYEE</h2>
+            <p>Go to Employee area<br> 
+            <a href='/user_detail/' title="1" data-gallery>Go...</a></p>          
+        </figcaption>
+    </figure>
+    <figure class="effect-oscar  wowload fadeInUp">
+        <img src="{% static "img/start/3.jpg" %}"  alt="img01"/>
+        <figcaption>
+            <h2>NEW ?</h2>
+            <p>Please register with details<br>
+            <a href="{% url 'registration_register' %}" title="1" data-gallery>Go...</a></p>            
+        </figcaption>
+    </figure>
+
+  
+          
+        </div>
+      </div>
+    
+  
+
+    
+
+      
+   
+
+    <script src="{% static 'js/index.js' %}"></script>
+
+  
+
+
+  </body>
+
+</html>

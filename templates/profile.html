@@ -1,0 +1,17 @@
+{% extends 'base_hr1.html' %}
+
+
+{% block contentmain %}
+    <a class="active" href="/salary/">salary</a>
+    <h1>ENTER THE DETAILS</h1>
+    <table align="center">
+    <form method="POST" class="post-form" enctype="multipart/form-data">
+    <tr><th>{% csrf_token %}<td>
+        {{ form.as_p }} </td></th></tr>
+        <tr><th><td><button type="submit" class="save btn btn-default">Save</button></td></th></tr>
+     </table>
+    </form>
+{% endblock %}
+
+
+

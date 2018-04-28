@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+       
+
+    
+	<h1>Employee Attendance</h1>
+           <a class="btn btn-default" href="{% url 'att_edit' pk=post.pk %}">EDIT</span></a>
+    <table class="table">
+
+            <tr><td>Employee name</td><td>{{ att.user}}</td></tr>
+            <tr><td>DATE</td><td>{{ att.date}}</td></tr>
+	    <tr><td>SHIFT</td><td>{{ att.shift}}</td></tr>
+  	    
+	    <tr><td>STATUS</td><td>{{ att.status}}</td></tr>
+	    <tr><td>REASON</td><td>{{ post.atten.reason}}</td></tr>    
+    </table>
+
+
+{% endblock %}

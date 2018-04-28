@@ -1,0 +1,46 @@
+{% extends 'base_hr1.html' %}
+
+
+{% load static%}
+
+
+
+
+{% block contentmain %}
+
+
+<nav class="navbar navbar-inverse navcolor">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Welocme</a>
+    </div>
+    <ul>
+      <li  class="inlin"><a  href="/post_new/">Add New</a></li>
+      <li  class="inlin"><a  href="/">Return Home</a></li>
+     <li class="inlin"><a href="{% url 'auth_logout' %}">Signout</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<h1>Employee Details</h1>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+  <table class="table">
+    {% for field in form %}
+      <tr>
+        <th>{{field.label_tag}}</th>
+        <td>
+          {{ field.errors }}
+          {{ field }}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+  <hr/>
+  <input type="submit" value="SAVE" />
+</form>
+ 
+          
+
+{% endblock %}

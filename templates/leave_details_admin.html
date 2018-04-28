@@ -1,0 +1,26 @@
+{% extends 'base_hr1.html' %}
+
+{% block contentmain %}
+       
+
+
+
+
+
+    <h1>LEAVE FORM</h1>
+             
+    <table class="table">
+            <tr><th>LEAVE REASON</th><th>STATUS</th><th> DATE </th></tr>
+            {% for leave in lve %}
+        
+            <tr><td>{{ leave.reason}}</td><td>{{ leave.status }}</td><td>{{ leave.published_date }}</td><td><a class="btn btn-default" href="{% url 'leave_edit' pk=leave.pk %}">EDIT</span></a></td></tr>
+            
+            {% endfor %}
+            
+            
+               
+	     
+    </table>
+
+
+{% endblock %}

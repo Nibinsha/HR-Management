@@ -1,0 +1,178 @@
+{% load static %}
+{% load i18n %}
+
+
+
+{% block contentmain %}
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>softhrm</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/agency.min.css' %}" rel="stylesheet">
+     <link href="{% static 'css/agency.css' %}" rel="stylesheet">
+
+    
+
+ 
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <a class="navbar-brand" href="https://www.facebook.com">Wanna a Refresh?</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+
+        <ul class="navbar-nav ml-auto">
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">WELCOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'registration_register' %}">NEW MEMBER?</a>          
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="#project">Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">Back</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+
+  </head>
+
+<header>
+  <div class="container">
+      
+
+    </div>
+  </div>
+</header>
+<style>
+
+
+   body {
+         
+       background-image: url('{% static "img/header-bg.png"%}');
+}
+.co{
+   
+   margin-left:10%;
+}
+<style>
+body {margin:0;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 22px 60px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddc232;
+  color: black;
+}
+
+.topnav a.active {
+    background-color: #d83c;
+    color: white;
+}
+
+
+p  {
+    color: white;
+    font-family: verdana;
+    font-size: 120%;
+    padding-left:16px;
+
+
+
+}
+</style>
+</head>
+    </style>
+<div class="login-header">
+
+
+  </div>
+
+<div class =" col-md-6 col-md-offset-6 co">
+
+  <h1>. </h1>
+  <h1>. </h1>
+  <h1>. </h1>
+  <h1 style="color:grey;" title="login">PLEASE LOGIN </h1>
+    <table class="col-md-6 col-md-offset-3">
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{% trans 'Log in' %}" />
+    <input type="hidden" name="next" value="{{ next }}" />
+</form>
+</div>
+<p>{% trans "Forgot your password?" %} <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a></p>
+<p>{% trans "Not a member?" %} <a href="{% url 'registration_register' %}">{% trans "Register" %}</a></p>
+</table>
+{% endblock %}
+
+
+{% comment %}
+**registration/login.html**
+
+It's your responsibility to provide the login form in a template called
+registration/login.html by default. This template gets passed four
+template context variables:
+
+``form``
+    A Form object representing the login form. See the forms
+    documentation for more on Form objects.
+
+``next``
+    The URL to redirect to after successful login. This may contain a
+    query string, too.
+
+``site``
+    The current Site, according to the SITE_ID setting. If you don't
+    have the site framework installed, this will be set to an instance
+    of RequestSite, which derives the site name and domain from the
+    current HttpRequest.
+
+``site_name``
+    An alias for site.name. If you don't have the site framework
+    installed, this will be set to the value of
+    request.META['SERVER_NAME']. For more on sites, see The
+    "sites" framework.
+{% endcomment %}

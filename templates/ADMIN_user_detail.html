@@ -1,0 +1,72 @@
+{% extends 'base_hr1.html' %}
+
+{% block contentmain %}
+       {% if post.work_all %}
+              <p style="color:red"> NEW WORK ALLOCATION </p><h1 style="color:blue">{{ post.work_all }}</h1>
+           {% else %}
+              <h1 style="color:blue">No currently WORK Allocation</h1>
+           {% endif %}
+
+    
+    
+
+    <h1>Employee Details</h1>
+          <a class="btn btn-default" href="{% url 'profile_edit' pk=post.pk %}">EDIT</span></a>    
+    <table class="table">
+
+            <tr><td>Employee name</td><td>{{ post.name}}</td></tr>
+            <tr><td>Address</td><td>{{ post.address}}</td></tr>
+	    <tr><td>Date of joining</td><td>{{ post.joindate}}</td></tr>
+  	    <tr><td>Date of Birth</td><td>{{ post.birth_date}}</td></tr>
+	    <tr><td>Phone number</td><td>{{ post.phone_number}}</td></tr>
+	    <tr><td>Date of resignation</td><td>{{ post.resigndate}}</td></tr>  
+             
+            <tr><td>IMAGE</td><td><img src="{{  post.image.url }}"  href="{{  post.image.url }}"width="100" height="100"></td></tr>  
+    </table>
+
+
+
+<h1>Employee Attendance</h1>
+ 
+ <table class="table"> 
+<tr><th>DATE</th><th>SHIFT</th><th>STATUS</th><th>REASON</th><th>EDIT</th></tr> 
+
+{% for post in att %}
+
+    
+	
+<tr><td>{{ post.date}}</td><td>{{ post.shift}}</td><td>{{ post.status}}</td><td>{{ post.reason}}</td><td><a class="btn btn-default" href="{% url 'att_edit' pk=post.pk %}">EDIT</span></a></td></tr>
+             
+
+{% endfor %}
+</table>
+
+	<h1>Employee Salary</h1>
+
+          <a class="btn btn-default" href="{% url 'salary_edit' pk=post.pk %}">EDIT</span></a> 
+    <table class="table">
+
+            
+            <tr><td>Year</td><td>{{ sal.year}}</td></tr>
+	    <tr><td>Date of joining</td><td>{{ sal.month}}</td></tr>
+  	    <tr><td>Amount</td><td>{{ sal.amount}}</td></tr>
+	    <tr><td>Approval</td><td>{{ sal.status}}</td></tr>  
+    </table>
+
+    <h1>LEAVE FORM</h1>
+             
+    <table class="table">
+            <tr><th>LEAVE REASON</th><th>STATUS</th><th> DATE </th></tr>
+            {% for leave in lve %}
+        
+            <tr><td>{{ leave.reason}}</td><td>{{ leave.status }}</td><td>{{ leave.published_date }}</td><td><a class="btn btn-default" href="{% url 'leave_edit' pk=leave.pk %}">EDIT</span></a></td></tr>
+            
+            {% endfor %}
+            
+            
+               
+	     
+    </table>
+
+
+{% endblock %}

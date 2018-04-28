@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block contentmain %}
+       
+
+    <h1>Employee Details</h1>
+          <a class="btn btn-default" href="{% url 'profile_edit' pk=post.pk %}">EDIT</span></a> 
+
+
+	<h1>Employee Salary</h1>
+          <a class="btn btn-default" href="{% url 'salary_edit' pk=post.pk %}">EDIT</span></a> 
+    <table class="table">
+
+            <tr><td>Employee name</td><td>{{ sal.user}}</td></tr>
+            <tr><td>Address</td><td>{{ sal.year}}</td></tr>
+	    <tr><td>Date of joining</td><td>{{ sal.month}}</td></tr>
+  	    <tr><td>Date of Birth</td><td>{{ sal.amount}}</td></tr>
+	    <tr><td>Phone number</td><td>{{ sal.status}}</td></tr>  
+    </table>
+
+
+{% endblock %}

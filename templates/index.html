@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+{% load staticfiles %} <!-- New line -->
+
+
+
+
+
+{% block jumbotron %}
+
+<style>
+{% block style %}
+.jumbotron {
+     background-color:  #239b56 ;
+     color: #FFF;
+}
+{% endblock %}
+</style>
+      <div class="jumbotron">
+        <div class = 'row'>
+            <div class = 'col-sm-6'>
+        <h1>HR MANAGEMENT</h1>
+                <p>The service features business and enterprise headlines for many corporations including their financial decisions and major news events.</p>
+        
+      <div class='col-sm-6' >
+          <img src="{% static "images/images.jpeg" %}" alt="Mountain View" style="width:580px;height:300px;" align="middle">
+          
+     </div>
+</div>
+      </div>
+{% endblock %}
+{% block content %}
+
+
+            
+            {% if request.user.is_superuser %} 
+            <li><a class="btn btn-lg btn-primary" href="/administration/" role="button">Admin</a></li>
+            
+            {% else %}
+                 {% if request.user.is_authenticated %} 
+             <li><a class="btn btn-lg btn-primary" href="/user_detail/" role="button">User</a></li>
+            
+            {% endif %}
+           {% endif %}
+            
+          
+
+{% endblock %}

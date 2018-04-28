@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>softhrm</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/agency.min.css' %}" rel="stylesheet">
+     <link href="{% static 'css/agency.css' %}" rel="stylesheet">
+
+    
+
+ 
+
+
+  </head>
+
+
+  <body id="page-top">
+  
+
+    <!-- Navigation -->
+    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <a class="navbar-brand" href="https://www.facebook.com">Wanna a Refresh?</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+
+        <ul class="navbar-nav ml-auto">
+       {% if request.user.is_authenticated %}
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#emp">MY PROFILE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#attendance">REQUEST A LEAVE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#salary">MY CASH</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#project">MY PROJECT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'auth_logout' %}">LOG OUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="navbar-brand"> Hello  {{ user }}</a>
+          </li>
+        </ul>
+        {% endif %}
+      </div>
+    </nav>
+    
+
+
+    <!-- Header -->
+    <header class="masthead">
+
+      <div class="container">
+
+        <div class="intro-text">
+          <div class="intro-lead-in"> EMPLOYEE AREA</div>
+          
+          <div class="intro-heading"> Welcome To SOFT HRM</div>
+
+          <a href="#services" class="btn btn-xl">GO TO GALLERY</a>
+        </div>
+      </div>
+    </header>
+
+     {% include 'navbar.html' %}
+
+    
+
+{% block contentmain %}
+
+  
+
+
+{% endblock %}
+    <!-- myprofile Grid -->
+
+   
+    <section class="bg-light" id="emp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">MY PROFILE</h2>
+            <h3 class="section-subheading text-muted">Point your mouse</h3>
+          </div>
+        </div>
+		<div class="row">
+          <div class="col-md-6 col-sm-6 emp-item">
+            <div class="emp-link" data-toggle="modal" onclick="window.location='/user_detail/'">
+              <div class="emp-hover">
+                <div class="emp-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static "img/myprofile/01-thumbnail.jpg" %}" alt="">
+            </div>
+            <div class="emp-caption">
+              <h4>VIEW</h4>
+              <p class="text-muted">My profile</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 emp-item">
+            <div class="emp-link" data-toggle="modal" href="#empModal2">
+              <div class="emp-hover">
+                <div class="emp-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static "img/myprofile/02-thumbnail.jpg" %}" alt="">
+            </div>
+            <div class="emp-caption">
+              <h4>UPDATE</h4>
+              <p class="text-muted">Editz</p>
+            </div>
+          </div>
+        
+          
+
+    <!-- attendance Grid -->
+<section class="bg-light" id="attendance">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">ATTENDANCE AREA</h2>
+            <h3 class="section-subheading text-muted">Point your mouse</h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-sm-6 emp-item">
+            <div class="emp-link" data-toggle="modal" href='employee/'>
+              <div class="emp-hover">
+                <div class="emp-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static "img/attendanceemp/01-thumbnail.jpg" %}" alt="">
+            </div>
+            <div class="emp-caption">
+              <h4>MY SHEET</h4>
+              <p class="text-muted">View attendance</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 emp-item">
+            <div class="emp-link" data-toggle="modal" href="#empModal2">
+              <div class="emp-hover">
+                <div class="emp-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static "img/attendanceemp/02-thumbnail.jpg" %}" alt="">
+            </div>
+            <div class="emp-caption">
+              <h4>REQUEST LEAVE</h4>
+              <p class="text-muted">Wanna a freeup</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 emp-item">
+            <div class="emp-link" data-toggle="modal" href="#empModal3">
+              <div class="emp-hover">
+                <div class="emp-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static "img/attendanceemp/03-thumbnail.jpg" %}" alt="">
+            </div>
+            <div class="emp-caption">
+              <h4>LEAVE STATUS</h4>
+              <p class="text-muted">Its Granted?</p>
+            </div>
+          </div>
+
+          <!-- salary Grid -->
+
+	<section class="bg-light" id="salary">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">SALARY AREA</h2>
+            <h3 class="section-subheading text-muted">Point your mouse</h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6 emp-item">
+            <div class="emp-link" data-toggle="modal" href="#empModal1">
+              <div class="emp-hover">
+                <div class="emp-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static "img/salemp/01-thumbnail.jpg" %}" alt="">
+            </div>
+            <div class="emp-caption">
+              <h4>MY BANK</h4>
+              <p class="text-muted">Current salary</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 emp-item">
+            <div class="emp-link" data-toggle="modal" href="#empModal2">
+              <div class="emp-hover">
+                <div class="emp-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static "img/salemp/02-thumbnail.jpg" %}" alt="">
+            </div>
+            <div class="emp-caption">
+              <h4>REQUEST A INCREMENT</h4>
+              <p class="text-muted">Wanna a stepup</p>
+            </div>
+          </div>
+          
+
+
+          <!-- project Grid -->
+
+	<section class="bg-light" id="project">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">PROJECT AREA</h2>
+            <h3 class="section-subheading text-muted">Point your mouse</h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-sm-6 emp-item">
+            <div class="emp-link" data-toggle="modal" href="#empModal1">
+              <div class="emp-hover">
+                <div class="emp-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static "img/projectemp/01-thumbnail.jpg" %}" alt="">
+            </div>
+            <div class="emp-caption">
+              <h4>VIEW</h4>
+              <p class="text-muted">Current Project</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 emp-item">
+            <div class="emp-link" data-toggle="modal" href="#empModal2">
+              <div class="emp-hover">
+                <div class="emp-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static "img/projectemp/02-thumbnail.jpg" %}" alt="">
+            </div>
+            <div class="emp-caption">
+              <h4>UPCOMING WORKS</h4>
+              <p class="text-muted">What Next?</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 emp-item">
+            <div class="emp-link" data-toggle="modal" href="#empModal3">
+              <div class="emp-hover">
+                <div class="emp-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{% static "img/projectemp/03-thumbnail.jpg" %}" alt="">
+            </div>
+            <div class="emp-caption">
+              <h4>MOST SUCCESS</h4>
+              <p class="text-muted">That a milestone</p>
+            </div>
+          </div>
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; R johns Pvt Ltd</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="{% static 'js/index.js' %}"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/popper/popper.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+    <script src="{% static 'js/contact_me.js' %}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{% static 'js/agency.min.js' %}"></script>
+
+
+  </body>
+
+}
+
+</html>

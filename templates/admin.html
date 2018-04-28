@@ -1,0 +1,36 @@
+{% extends 'base_hr.html' %}
+
+
+{% load static %}
+
+{% block contentmain %}
+
+<nav class="navbar navbar-inverse navcolor">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Welocme</a>
+    </div>
+    <ul>
+      <li  class="inlin"><a  href="/post_new/">Add New</a></li>
+      <li  class="inlin"><a  href="/">Return Home</a></li>
+     <li class="inlin"><a href="{% url 'auth_logout' %}">Signout</a></li>
+    </ul>
+  </div>
+</nav>
+
+ 
+    <div>
+        <h1>Employee Details</h1>
+        <table class = "table whiteb">
+
+
+		<tr><th>Employee Name</th><th> Id</th><th>Address</th><th>Phone</th><th>Joining Date</th><tr>
+        {% for post in posts %}
+              
+      <tr><td><a href="{% url 'post_detail' pk=post.pk %}">{{ post.user }}</a></td><td> {{post.pk}}</td><td>{{post.address}}</td><td>{{post.phone_number}}</td><td>{{post.joindate}}</td><tr>
+        
+       {% endfor %}
+        </table>	
+    </div>
+
+{% endblock %}

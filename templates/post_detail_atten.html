@@ -1,0 +1,43 @@
+{% extends 'base_hr1.html' %}
+
+{% block contentmain %}
+       
+
+    <h1>Employee Details</h1>
+          <a class="btn btn-default" href="{% url 'profile_edit' pk=post.pk %}">EDIT</span></a>    
+    <table class="table">
+
+            <tr><td>Employee name</td><td>{{ post.name}}</td></tr>
+              
+    </table>
+
+
+
+<h1>Employee Attendance</h1>
+ 
+ <table class="table"> 
+<tr><th>DATE</th><th>SHIFT</th><th>STATUS</th><th>REASON</th><th>EDIT</th></tr> 
+{% for post in att %}
+
+    
+	
+<tr><td>{{ post.date}}</td><td>{{ post.shift}}</td><td>{{ post.status}}</td><td>{{ post.reason}}</td><td><a class="btn btn-default" href="{% url 'att_edit' pk=post.pk %}">EDIT</span></a></td></tr>
+ </table>            
+
+{% endfor %}
+<!--</table>
+
+	<h1>Employee Salary</h1>
+
+          <a class="btn btn-default" href="{% url 'salary_edit' pk=post.pk %}">EDIT</span></a> 
+    <table class="table">
+
+            
+            <tr><td>Year</td><td>{{ sal.year}}</td></tr>
+	    <tr><td>Date of joining</td><td>{{ sal.month}}</td></tr>
+  	    <tr><td>Amount</td><td>{{ sal.amount}}</td></tr>
+	    <tr><td>Approval</td><td>{{ sal.status}}</td></tr>  
+    </table>
+-->
+
+{% endblock %}

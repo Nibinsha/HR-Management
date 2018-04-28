@@ -1,0 +1,9 @@
+
+
+{% block contentmain %}
+    <h1>ENTER THE DETAILS</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.reason}}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

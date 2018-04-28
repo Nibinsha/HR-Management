@@ -1,0 +1,30 @@
+{% extends 'base_hr1.html' %}
+
+{% block contentmain %}
+       
+
+
+<h1>Employee Attendance</h1>
+ 
+ <table class="table"> 
+<tr><th>DATE</th><th>SHIFT</th><th>STATUS</th><th>REASON</th><th>EDIT</th></tr> 
+
+{% for post in att %}
+
+    
+	
+<tr><td>{{ post.date}}</td><td>{{ post.shift}}</td><td>{{ post.status}}</td><td>{{ post.reason}}</td><td><a class="btn btn-default" href="{% url 'att_edit' pk=post.pk %}">EDIT</span></a></td></tr>
+             
+
+{% endfor %}
+
+
+	    
+		    
+		    
+		       
+		     
+	    </table>
+
+
+{% endblock %}

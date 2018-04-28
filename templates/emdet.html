@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+       
+
+    <h1>Employee Details</h1>
+          <a class="btn btn-default" href="{% url 'profile_edit' pk=post.pk %}">EDIT</span></a>    
+    <table class="table">
+
+            <tr><td>Employee name</td><td>{{ post.user}}</td></tr>
+            <tr><td>Address</td><td>{{ post.address}}</td></tr>
+	    <tr><td>Date of joining</td><td>{{ post.joindate}}</td></tr>
+  	    <tr><td>Date of Birth</td><td>{{ post.birth_date}}</td></tr>
+	    <tr><td>Phone number</td><td>{{ post.phone_number}}</td></tr>
+	    <tr><td>Date of resignation</td><td>{{ post.resigndate}}</td></tr>    
+    </table>
+
+{% endblock %}
